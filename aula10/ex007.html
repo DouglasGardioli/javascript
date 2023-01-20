@@ -9,6 +9,7 @@
         body {
             font: normal 1em Arial, sans-serif;
             background-color: lightblue;
+            text-align: center;
         }
         input {
             font: normal 1em Arial, sans-serif;
@@ -20,22 +21,67 @@
     </style>
 </head>
 <body>
+    <!-- SOMANDO VALORES -->
     <h1>Somando Valores</h1>
+
     <input type="number" name="txtn1" id="txtn1">
     +
     <input type="number" name="txtn2" id="txtn2">
+
     <input type="button" value="Somar" onclick="somar()">
-    <div id="res">Resultado</div>
+
+    <div id="ressoma">Resultado</div>
+
+    <!-- SUBTRAINDO VALORES-->
+    <h1>Subtraindo Valores</h1>
+
+    <input type="number" name="sub1" id="sub1">
+    - 
+    <input type="number" name="sub2" id="sub2">
+
+    <input type="button" value="Subtrair" onclick="subtrair()">
+
+    <div id="ressub">Resultado</div>
+
+    <!-- MULTIPLICANDO VALORES -->
+    <h1>Multiplicando Valores</h1>
+
+    <input type="number" name="mult1" id="mult1">
+    *
+    <input type="number" name="mult2" id="mult2">
+
+    <input type="button" value="Multiplicar" onclick="multiplicar()">
+
+    <div id="resmult">Resultado</div>
+
     <script>
         function somar() {
             var tn1 = window.document.getElementById('txtn1')
             var tn2 = window.document.querySelector('input#txtn2')
-            var res = window.document.getElementById('res')
+            var res = window.document.getElementById('ressoma')
             var n1 = Number(tn1.value)
             var n2 = Number(tn2.value)
             var s = n1 + n2
             res.innerHTML = `A soma entre ${n1} e ${n2} é igual a <strong>${s}</strong>`
         }
+        function subtrair() {
+            var s1 = window.document.getElementById('sub1')
+            var s2 = window.document.getElementById('sub2')
+            var res = window.document.getElementById('ressub')
+            var ns1 = Number(s1.value)
+            var ns2 = Number(s2.value) 
+            var s = ns1 - ns2
+            res.innerHTML = `A subtração entre ${ns1} e ${ns2} é igual a ${s}`
+        }
+        function multiplicar() {
+            var m1 = window.document.querySelector('input#mult1')
+            var m2 = window.document.querySelector('input#mult2')
+            var res = window.document.querySelector('input#resmult')
+            var nm1 = Number(m1.value)
+            var nm2 = Number(m2.value)
+            var s = nm1 * nm2
+            res.innerHTML = `A multiplicação entre ${nm1} e ${nm2} é igual a ${s}`
+        }   
     </script>
 </body>
 </html>
