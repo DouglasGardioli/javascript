@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>Sua Nacionalidade</h1>
+
+    <input type="text" name="nacio" id="nacio">
+    <input type="button" value="Verificar" onclick="verinacio()">
+    <div id="res"></div>
+
+    <script>
+        function verinacio() {
+        var n = document.getElementById('nacio')
+        var r = document.querySelector('div#res')
+        r.innerHTML = `Seu país de origem é o(a) ${n.value}<br>`   
+
+        if (n.value == 'Brasil'){
+            r.innerHTML += `Você é brasileiro.`
+        } else {
+            r.innerHTML += `Você é estrangeiro.`
+        }
+        }
+        </script>
+</body>
+</html>
