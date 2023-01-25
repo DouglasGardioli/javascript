@@ -9,7 +9,7 @@
         * {
             padding: 0px;
             margin: 0px;
-            font: normal 1em Arial, Helvetica, Sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         body {
             background-color: lightgrey;
@@ -17,9 +17,8 @@
         main {
             width: 90vw;
             margin: auto;
-        }
-        article {
-            margin-bottom: 20px;
+            background-color: white;
+            padding: 15px;
         }
         h1 {
             font-weight: bold;
@@ -33,14 +32,18 @@
         }
         table {
             border-collapse: collapse;
+            margin: auto;
         }
         td,th{
             border: solid 1px black;
             padding: 10px;
         }
         form {
+            text-align: center;
             margin: auto;
-            display: block;
+            width: 300px;
+            margin-bottom: 30px;
+            margin-top: 30px;
         }
         #peso, #altura {
             width: 100px;
@@ -48,11 +51,28 @@
         }
         label {
             margin-right: 10px;
-            font-size: 0.8em;
         }
-        input#botoes {
-            width: 75px;
+        div#botoes input {
             padding: 2px;
+            margin-top: 5px;
+        }
+        #altura, #peso {
+            margin-top: 5px;
+        }
+        div#res {
+            margin: auto;
+            text-align: center;
+            width: 100px;
+            height: 50px;
+            background-color: blue;
+            padding: 5px;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        div span {
+            font-weight: bold;
         }
         @media screen and (min-width: 768px) {
             main {
@@ -70,49 +90,118 @@
 
         <form action="cadastro.php">
             <label for="altura">Altura (ex: 1,70)</label>
-            <input type="number" name="altura" id="altura">
-
+            <input type="number" name="altura" id="altura" required>
+            <br>
             <label for="peso">Peso (ex: 70,6)</label>
-            <input type="number" name="peso" id="peso">
+            <input type="number" name="peso" id="peso" required>
             <br>
 
-                <input type="button" value="Calcular" id="botoes">
-                <input type="reset" value="Limpar" id="botoes">
+                <div id="botoes">
+                    <input type="button" value="Calcular" onclick="calcular()">
+                    <input type="reset" value="Limpar" onclick="limpar()">
+                </div>
         </form>
+
+        <div id="res">
+            <span>Seu IMC:</span>
+        </div>
 
         <table>
             <caption>Tabela do IMC (Índice de massa corporal)</caption>
             <thead>
-                <th>IMC</th>
-                <th>Classificação</th>
+                <th scope="col">IMC</th>
+                <th scope="col">Classificação</th>
             </thead>
             <tbody>
-                <tr>
+                <tr id="linha1">
                     <td>Abaixo de 18,5</td>
                     <td>Abaixo do peso</td>
                 </tr>
-                <tr>
+                <tr id="linha2">
                     <td>Entre 18,6 e 24,9</td>
                     <td>Peso ideal</td>
                 </tr>
-                <tr>
+                <tr id="linha3">
                     <td>Entre 25,0 e 29,9</td>
                     <td>Levemente acima do peso</td>
                 </tr>
-                <tr>
+                <tr id="linha4">
                     <td>Entre 30,0 e 34,9</td>
                     <td>Obesidade grau I</td>
                 </tr>
-                <tr>
+                <tr id="linha5">
                     <td>Entre 35,0 e 39,9</td>
                     <td>Obesidade grau II(Severa)</td>
                 </tr>
-                <tr>
+                <tr id="linha6">
                     <td>Acima de 40</td>
                     <td>Obesidade grau III(Mórbida)</td>
                 </tr>
             </tbody>
         </table>
     </main>
+
+    <script>
+        var altura = document.getElementById('altura')
+        var peso = document.getElementById('peso')
+        var res = document.getElementById('res')
+
+        function calcular() {
+            var a = altura.value
+            var p = peso.value
+            var cal = p / (a * a)
+            res.innerHTML = `Seu IMC: ${cal.toFixed(1)}`
+
+            if (cal < 18.5) {
+                var linha1 = document.getElementById('linha1')
+                linha1.style.backgroundColor = 'blue'
+                linha1.style.color = 'white'
+            } else if (cal > 18.5 && cal <= 24.9) {
+                var linha2 = document.getElementById('linha2')
+                linha2.style.backgroundColor = 'blue'
+                linha2.style.color = 'white'
+            } else if (cal > 24.9 && cal <= 29.9) {
+                var linha3 = document.getElementById('linha3')
+                linha3.style.backgroundColor = 'blue'
+                linha3.style.color = 'white'
+            }  else if (cal > 29.9 && cal < 35.0) {
+                var linha3 = document.getElementById('linha4')
+                linha3.style.backgroundColor = 'blue'
+                linha3.style.color = 'white'
+            } else if (cal > 34.9 && cal < 40) {
+                var linha5 = document.getElementById('linha5')
+                linha5.style.backgroundColor = 'blue'
+                linha5.style.color = 'white'
+            } else {
+                var linha6 = document.getElementById('linha6')
+                linha6.style.backgroundColor = 'blue'
+                linha6.style.color = 'white'
+            }
+
+        }
+        function limpar() {
+            cal = ''
+            res.innerHTML = `Seu IMC:<br>${cal}`
+
+            var linha = document.getElementsByTagName('tr')[1]
+            linha.style.backgroundColor = 'white'
+            linha.style.color = 'black'
+            var linha = document.getElementsByTagName('tr')[2]
+            linha.style.backgroundColor = 'white'
+            linha.style.color = 'black'
+            var linha = document.getElementsByTagName('tr')[3]
+            linha.style.backgroundColor = 'white'
+            linha.style.color = 'black'
+            var linha = document.getElementsByTagName('tr')[4]
+            linha.style.backgroundColor = 'white'
+            linha.style.color = 'black'
+            var linha = document.getElementsByTagName('tr')[5]
+            linha.style.backgroundColor = 'white'
+            linha.style.color = 'black'
+            var linha = document.getElementsByTagName('tr')[6]
+            linha.style.backgroundColor = 'white'
+            linha.style.color = 'black'
+        }
+    </script>
 </body>
 </html>
