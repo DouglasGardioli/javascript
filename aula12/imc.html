@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcule seu IMC</title>
+    <style> 
+        * {
+            padding: 0px;
+            margin: 0px;
+            font: normal 1em Arial, Helvetica, Sans-serif;
+        }
+        body {
+            background-color: lightgrey;
+        }
+        main {
+            width: 90vw;
+            margin: auto;
+        }
+        article {
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-weight: bold;
+            font-size: 2em;
+            text-align: center;
+            padding: 30px 10px 30px 10px;
+        }
+        p {
+            text-indent: 2em;
+            text-align: justify;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        td,th{
+            border: solid 1px black;
+            padding: 10px;
+        }
+        form {
+            margin: auto;
+            display: block;
+        }
+        #peso, #altura {
+            width: 100px;
+            margin-right: 10px;
+        }
+        label {
+            margin-right: 10px;
+            font-size: 0.8em;
+        }
+        input#botoes {
+            width: 75px;
+            padding: 2px;
+        }
+        @media screen and (min-width: 768px) {
+            main {
+                width: 768px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <article>
+            <h1>Calculando o IMC</h1>
+            <p>O Índice de Massa Corporal (IMC) é uma medida utilizada para avaliar o estado nutricional de uma pessoa. Ele é calculado dividindo o peso (em quilogramas) pela altura (em metros) ao quadrado. O resultado é interpretado com base em uma tabela de classificação, onde um valor abaixo de 18,5 é considerado abaixo do peso, entre 18,5 e 24,9 é considerado peso normal, entre 25 e 29,9 é considerado sobrepeso, e acima de 30 é considerado obesidade.</p>
+        </article>
+
+        <form action="cadastro.php">
+            <label for="altura">Altura (ex: 1,70)</label>
+            <input type="number" name="altura" id="altura">
+
+            <label for="peso">Peso (ex: 70,6)</label>
+            <input type="number" name="peso" id="peso">
+            <br>
+
+                <input type="button" value="Calcular" id="botoes">
+                <input type="reset" value="Limpar" id="botoes">
+        </form>
+
+        <table>
+            <caption>Tabela do IMC (Índice de massa corporal)</caption>
+            <thead>
+                <th>IMC</th>
+                <th>Classificação</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Abaixo de 18,5</td>
+                    <td>Abaixo do peso</td>
+                </tr>
+                <tr>
+                    <td>Entre 18,6 e 24,9</td>
+                    <td>Peso ideal</td>
+                </tr>
+                <tr>
+                    <td>Entre 25,0 e 29,9</td>
+                    <td>Levemente acima do peso</td>
+                </tr>
+                <tr>
+                    <td>Entre 30,0 e 34,9</td>
+                    <td>Obesidade grau I</td>
+                </tr>
+                <tr>
+                    <td>Entre 35,0 e 39,9</td>
+                    <td>Obesidade grau II(Severa)</td>
+                </tr>
+                <tr>
+                    <td>Acima de 40</td>
+                    <td>Obesidade grau III(Mórbida)</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>
