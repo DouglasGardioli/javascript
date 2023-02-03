@@ -11,20 +11,14 @@
     <header>
         <h1>Contador</h1>
     </header>
-    <section id="contador">
-        <label for="inicio">Início:</label>
-        <input type="number" name="inicio" id="inicio">
-
-        <label for="fim">Fim:</label>
-        <input type="number" name="fim" id="fim">
-
-        <label for="passo">Passo:</label>
-        <input type="number" name="passo" id="passo">
-
-        <input type="button" value="Contar" onclick="contar()">
+    <section>
+        <p class="parag"><label for="icont">Início: </label><input type="number" name="inicio:" id="icont"></p>
+        <p class="parag">Fim: <input type="number" name="fim" id="fcont"></p>
+        <p class="parag">Passo: <input type="number" name="passo" id="pcont"></p>
+        <p class="parag" id="botao"><input type="button" value="Contar" id="contar" onclick="contar()"></p>
 
         <div id="resultado">
-            Preparando a contagem...
+            Esperando a contagem...
         </div>
     </section>
     <footer>

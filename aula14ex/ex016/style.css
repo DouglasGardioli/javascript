@@ -1,24 +1,56 @@
 @charset "UTF-8";
-
+:root {
+    --color1: rgb(92, 92, 243);
+    --font1: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 body {
-    background-color: rgb(92, 92, 243);
-    font: normal 1em Arial, Sans-Serif;
+    background-color: var(--color1);
+    font-family: var(--font1);
 }   
-header {
+header > h1 {
     color: white;
     text-align: center;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.411);
 }
-section#contador {
+section {
     background-color: white;
     border-radius: 10px;
     margin: auto;
     width: 500px;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.459);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.459);
     padding: 10px;
+    text-align: right;
 }
-section#contador > input {
-    display: block;
-    margin-bottom: 15px;
+section > p.parag {
+    width: 50%;
+    margin: auto;
+}
+section > p > input {
+    width: calc(100% - 72px);
+    border: 2px solid var(--color1);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+input#contar {
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid ;
+    background-color: var(--color1);
+    color: white;
+    cursor: pointer;
+    font-weight: bolder;
+}
+p#botao {
+    text-align: center;
+}
+input#contar:hover {
+    background-color: rgb(75, 75, 196);
+}
+div#resultado {
+    text-align: center;
 }
 footer {
     color: white;
