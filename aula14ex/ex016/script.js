@@ -1,33 +1,22 @@
 function contar() {
-    var i = document.getElementById('inicio')
-    var f = document.getElementById('fim')
-    var p = document.getElementById('passo')
-    var r = document.getElementById('resultado')
+    let ini = document.getElementById('inicio')
+    let fim = document.getElementById('fim')
+    let pas = document.getElementById('passo')
+    let res = document.getElementById('resultado')
 
-    if (i.value == '' || f.value == '') {
+    if (ini.value.length == 0 || fim.value.length == 0 || pas.value.lenght == 0) {
        
-        r.innerHTML = ('Impossível contar... Revise os números e tente novamente!')
+        window.alert('[Erro] Faltam dados. Revise os números e tente novamente!')
 
     } else {
-        if (p.value == '' || p.value == 0) {
-            p.value = 1
-            alert('Passo não inserido! Consideraremos Passo 1.')
+        r.innerHTML = 'Contando: '
+        let i = Number(ini.value)
+        let f = Number(fim.value)
+        let p = Number(pas.value)    
+
+        for (let c = i; c <= f; c += p) {
+            res.innerHTML += `${c} `
         }
 
-        r.innerHTML = ('Contando: ')
-
-        if (i.value < f.value) {
-            c = Number(i.value)
-            while (c <= f.value) {
-                r.innerHTML += (c)
-                c += p.value
-            }
-        } else {
-            c = Number(f.value)
-            while (c >= i.value) {
-                r.innerHTML += (c)
-                c -= p.value
-            }
-        }
     }
 }
