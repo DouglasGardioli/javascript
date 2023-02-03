@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+body {
+    background-color: rgb(92, 92, 243);
+    font: normal 1em Arial, Sans-Serif;
+}   
+header {
+    color: white;
+    text-align: center;
+}
+section#contador {
+    background-color: white;
+    border-radius: 10px;
+    margin: auto;
+    width: 500px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.459);
+    padding: 10px;
+}
+section#contador > input {
+    display: block;
+    margin-bottom: 15px;
+}
+footer {
+    color: white;
+    text-align: center;
+}
