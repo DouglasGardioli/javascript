@@ -2,11 +2,14 @@
 
 body {
     background-color: rgb(92, 92, 243);
-    font: normal 1em Arial, Sans-Serif;
+    font: normal 1em 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }   
 header {
     color: white;
     text-align: center;
+}
+header > h1 {
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.404);
 }
 section {
     background-color: white;
@@ -15,6 +18,28 @@ section {
     width: 500px;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.459);
     padding: 10px;
+}
+section > div#itab {
+    width: 40%;
+    height: 230px;
+    border: 2px solid rgb(92, 92, 243);
+    margin: auto;
+    padding: 10px;
+}
+section > p{
+    text-align: center;
+}
+section > p > input#inum {
+    padding: 5px;
+}
+section > p > input#botao {
+    padding: 5px;
+    background-color: rgb(92, 92, 243);
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border: 2px solid rgb(92, 92, 243);
 }
 footer {
     color: white;

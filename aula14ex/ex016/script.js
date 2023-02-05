@@ -20,13 +20,15 @@ function contar() {
 
         if (i < f) {
             for (let c = i; c <= f; c += p) {
-                res.innerHTML += `${c} - `
+                res.innerHTML += `${c} `
+                res.innerHTML += String.fromCodePoint(0x1F449)
             }
         } else {
             for (let c = i; c >= f; c -= p) {
-                res.innerHTML += `${c} - `
+                res.innerHTML += ` ${c} `
+                res.innerHTML += String.fromCodePoint(0x1F449)
             }
         }
-        res.innerHTML += 'Fim!'
+        res.innerHTML += String.fromCodePoint(0x1F3C1)
     }
 }
