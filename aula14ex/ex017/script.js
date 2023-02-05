@@ -11,12 +11,8 @@ function tabuada() {
     for (var c = 1; c <= 10; c++){
         let item = document.createElement('option')
         item.text = (`${n} x ${c} = ${(n * c)} `)
+        item.value = `tab${c}`
         tab.appendChild(item)
         }
     }
-}
-
-function limpar () {
-    document.getElementById('inum').value = ""
-    document.getElementById('itab').innerHTML = (`Digite um número acima`)
 }
