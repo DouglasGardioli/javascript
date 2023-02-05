@@ -4,6 +4,7 @@ function contar() {
     let pas = document.getElementById('pcont')
     res = document.getElementById('resultado')
 
+    // dados não preenchidos
     if (ini.value.length == 0 || fim.value.length == 0 || pas.value.length == 0) {
         alert('Erro! Há dados não preenchidos. Tente Novamente')
     } else {
@@ -12,18 +13,18 @@ function contar() {
         let p = Number(pas.value)
 
         res.innerHTML = 'Contando: '
-
+        // passo inválido
         if (p <= 0) {
             alert(`Passo [${p}] é inválido. Consideramos então Passo [1]`)
             p = 1
         }
 
-        if (i < f) {
+        if (i < f) { // contagem progressiva
             for (let c = i; c <= f; c += p) {
                 res.innerHTML += `${c} `
                 res.innerHTML += String.fromCodePoint(0x1F449)
             }
-        } else {
+        } else { // contagem regressiva
             for (let c = i; c >= f; c -= p) {
                 res.innerHTML += ` ${c} `
                 res.innerHTML += String.fromCodePoint(0x1F449)
