@@ -1,8 +1,6 @@
-
 var valores = []
 
 function addvalores() { // Adicionando valores
-
     let num = document.getElementById('inum')
     let res = document.getElementById('resultado')
     let list = document.getElementById('valores-list')
@@ -28,35 +26,26 @@ function finalizar() { // finalizar a adição de valores e fazer todos os cálc
     } else { // Tudo certo, hora de fazer os cálculos
         let res = document.getElementById('resultado')
         res.innerHTML = ''
-        res.innerHTML += `<p>Ao todo, temos ${valores.length} números cadastrados</p>` //Total de numeros cadastrados
 
         var maior = valores[0] //Maior valor
+        var menor = valores[0] // Menor valor
+        var soma = 0 // Soma dos valores
 
         for (let c = 0; c < valores.length; c++) {
             if (valores[c] > maior) {
                 maior = valores[c]
             }
-        }
-        res.innerHTML += `<p>O maior valor digitado foi ${maior}</p>`
-
-        var menor = valores[0] // Menor valor
-
-        for (let c = 0; c < valores.length; c++) {
             if (valores[c] < menor) { 
                 menor = valores[c]
             }
+            soma += valores[c] 
         }
-        res.innerHTML += `<p>O menor valor digitado foi ${menor}</p>`
-
-        var soma = 0 // Soma dos valores
-
-        for (let c = 0; c < valores.length; c++) {
-            soma += valores[c]  
-        }
-        res.innerHTML += `<p>A soma dos valores é ${soma} </p>` 
-
         var media = soma / valores.length // Média dos valores
-
+        // Resultados
+        res.innerHTML += `<p>Ao todo, temos ${valores.length} números cadastrados</p>`
+        res.innerHTML += `<p>O maior valor digitado foi ${maior}</p>`
+        res.innerHTML += `<p>O menor valor digitado foi ${menor}</p>`
+        res.innerHTML += `<p>A soma dos valores é ${soma} </p>` 
         res.innerHTML += `<p>A média entre os valores é ${media.toFixed(1)}</p>`
     }
 }
